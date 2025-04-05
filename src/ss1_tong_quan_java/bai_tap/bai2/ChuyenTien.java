@@ -1,4 +1,4 @@
-package ss1_tong_quan_java.bai_tap;
+package ss1_tong_quan_java.bai_tap.bai2;
 
 import java.util.Scanner;
 
@@ -13,7 +13,6 @@ public class ChuyenTien {
             System.out.println("nhập số tiền");
             double money = Double.parseDouble(scanner.nextLine());
             if (menhGia.equals("USD")) {
-
                 double tienMy = money / rate;
                 System.out.println(" số tiền USD là: " + tienMy + "$");
 
