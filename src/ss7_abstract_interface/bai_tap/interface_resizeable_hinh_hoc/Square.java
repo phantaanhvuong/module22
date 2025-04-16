@@ -1,8 +1,8 @@
 package ss7_abstract_interface.bai_tap.interface_resizeable_hinh_hoc;
 
-import ss7_abstract_interface.bai_tap.interface_colorable.Colorable;
+import ss7_abstract_interface.bai_tap.interface_colorable.IColorable;
 
-public class Square extends Shape implements Resizeable, Colorable {
+public class Square extends Shape implements Resizeable, IColorable {
     private double side = 1.0;
 
     public Square() {

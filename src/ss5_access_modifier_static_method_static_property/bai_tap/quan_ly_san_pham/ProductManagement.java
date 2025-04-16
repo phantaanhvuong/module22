@@ -1,6 +1,5 @@
 package ss5_access_modifier_static_method_static_property.bai_tap.quan_ly_san_pham;
 
-import javax.xml.namespace.QName;
 import java.util.Scanner;
 
 public class ProductManagement {
@@ -38,6 +37,7 @@ public class ProductManagement {
         }
         displayProduct();
     }
+
     public void updateProduct(){
         System.out.println("nhập id bạn muốn sửa");
         int id = Integer.parseInt(scanner.nextLine());

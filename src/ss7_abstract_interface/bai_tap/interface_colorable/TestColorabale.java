@@ -17,7 +17,7 @@ public class TestColorabale{
             }else if (shape instanceof Rectangle){
                 System.out.println("area rectangle= " + ((Rectangle) shape).getArea());
             }else {
-                Colorable colorable = (Square) shape;
+                IColorable colorable = (Square) shape;
                 System.out.println("area square= " + ((Square) shape).getArea());
                 colorable.howToColor();
             }
