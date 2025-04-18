@@ -1,15 +1,17 @@
-package bai_lam_them_mvc.service;
+package mvc_arraylist.service;
 
-import bai_lam_them_mvc.entity.Oto;
-import bai_lam_them_mvc.repository.IOtoRepository;
-import bai_lam_them_mvc.repository.OtoRepository;
+import mvc_arraylist.entity.Oto;
+import mvc_arraylist.repository.IOtoRepository;
+import mvc_arraylist.repository.OtoRepository;
+
+import java.util.ArrayList;
 
 public class OtoService implements IOtoService {
     private final IOtoRepository otoRepository = new OtoRepository();
 
 
     @Override
-    public Oto[] timKiemAll() {
+    public ArrayList<Oto> timKiemAll() {
         return otoRepository.timKiemAll();
     }
 

@@ -1,14 +1,16 @@
-package bai_lam_them_mvc.service;
+package mvc_arraylist.service;
 
-import bai_lam_them_mvc.entity.XeMay;
-import bai_lam_them_mvc.repository.IXeMayRepository;
-import bai_lam_them_mvc.repository.XeMayRepository;
+import mvc_arraylist.entity.XeMay;
+import mvc_arraylist.repository.IXeMayRepository;
+import mvc_arraylist.repository.XeMayRepository;
+
+import java.util.ArrayList;
 
 public class XeMayService implements IXeMayService {
     private final IXeMayRepository xeMayRepository = new XeMayRepository();
 
     @Override
-    public XeMay[] timKiemAll() {
+    public ArrayList<XeMay> timKiemAll() {
         return xeMayRepository.timKiemAll();
     }
 

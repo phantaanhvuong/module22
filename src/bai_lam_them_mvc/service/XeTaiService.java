@@ -5,7 +5,7 @@ import bai_lam_them_mvc.repository.IXetaiRepository;
 import bai_lam_them_mvc.repository.XeTaiRepository;
 
 public class XeTaiService implements IXeTaiService{
-    private IXetaiRepository xetaiRepository = new XeTaiRepository();
+    private final IXetaiRepository xetaiRepository = new XeTaiRepository();
 
 
     @Override
