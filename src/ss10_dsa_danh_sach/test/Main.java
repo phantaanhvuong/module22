@@ -1,6 +1,4 @@
-package ss10.test;
-
-import ss4_method.quan_ly_hoc_sinh.Student;
+package ss10_dsa_danh_sach.test;
 
 import java.util.ArrayList;
 

@@ -53,7 +53,7 @@ public class MenuCon {
         XeMayService xeMayService = new XeMayService();
         boolean falg = true;
         do {
-            System.out.println("Hiển thị phương tiện" +
+            System.out.println("Thêm mới phương tiện" +
                     "\n 1. thêm xe tải" +
                     "\n 2. thêm xe ôtô" +
                     "\n 3. thêm xe máy" +

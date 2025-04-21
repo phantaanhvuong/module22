@@ -1,4 +1,4 @@
-package ss10.thuc_hanh.trien_khai_lop_list_don_gian;
+package ss10_dsa_danh_sach.thuc_hanh.trien_khai_lop_list_don_gian;
 
 import java.util.Arrays;
 

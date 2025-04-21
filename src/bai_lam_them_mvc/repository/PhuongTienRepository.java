@@ -6,7 +6,7 @@ import bai_lam_them_mvc.entity.XeMay;
 import bai_lam_them_mvc.entity.XeTai;
 
 public class PhuongTienRepository implements IPhuongTienRepository {
-    private PhuongTien[] phuongTiens = new PhuongTien[10];
+    private PhuongTien[] phuongTiens = new PhuongTien[30];
 
     @Override
     public boolean xoaPhuongTien(String bienKiemSoat) {

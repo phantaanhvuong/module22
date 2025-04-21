@@ -3,7 +3,7 @@ package bai_lam_them_mvc.repository;
 import bai_lam_them_mvc.entity.XeTai;
 
 public class XeTaiRepository implements IXetaiRepository,IPhuongTienRepository {
-    private static XeTai[] xeTais = new XeTai[2];
+    private static XeTai[] xeTais = new XeTai[10];
     static {
         xeTais[0] = new XeTai("54646C", "MMM", 1676,"hoa",10000);
         xeTais[1] = new XeTai("54879C", "JQK", 1869,"ly",20000);

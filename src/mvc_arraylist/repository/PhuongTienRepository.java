@@ -8,10 +8,10 @@ import mvc_arraylist.entity.XeTai;
 import java.util.ArrayList;
 
 public class PhuongTienRepository implements IPhuongTienRepository {
-    private static final ArrayList<PhuongTien> phuongTiens = new ArrayList<>();
-    private static final IOtoRepository otoRepository = new OtoRepository();
-    private static final IXetaiRepository xetaiRepository = new XeTaiRepository();
-    private static final IXeMayRepository xeMayRepository = new XeMayRepository();
+    private static ArrayList<PhuongTien> phuongTiens = new ArrayList<>();
+    private static IOtoRepository otoRepository = new OtoRepository();
+    private static IXetaiRepository xetaiRepository = new XeTaiRepository();
+    private static IXeMayRepository xeMayRepository = new XeMayRepository();
 
 
     @Override

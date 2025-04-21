@@ -10,7 +10,7 @@ public class PhuongTienController {
 
     public static void menuChinh() {
         IPhuongTienService phuongTienService = new PhuongTienService();
-        boolean falg = true;
+        boolean flag = true;
         do {
             System.out.println("CHƯƠNG TRÌNH QUẢN LÝ PHƯƠNG TIỆN GIAO THÔNG" +
                     "\n Chọn chức năng:" +
@@ -41,8 +41,8 @@ public class PhuongTienController {
                     }
                     break;
                 default:
-                    falg = false;
+                    flag = false;
             }
-        } while (falg);
+        } while (flag);
     }
 }

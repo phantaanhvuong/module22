@@ -3,7 +3,7 @@ package bai_lam_them_mvc.repository;
 import bai_lam_them_mvc.entity.Oto;
 
 public class OtoRepository implements IOtoRepository,IPhuongTienRepository {
-    private static Oto[] otos = new Oto[2];
+    private static Oto[] otos = new Oto[10];
     static {
         otos[0] = new Oto("88078A","XXXX",1990,"Vuong",16,"du lịch");
         otos[1] = new Oto("88234A","VVVV",1660,"Minh",9,"phược");

@@ -5,7 +5,7 @@ import bai_lam_them_mvc.repository.IXeMayRepository;
 import bai_lam_them_mvc.repository.XeMayRepository;
 
 public class XeMayService implements IXeMayService {
-    private final IXeMayRepository xeMayRepository = new XeMayRepository();
+    private IXeMayRepository xeMayRepository = new XeMayRepository();
 
     @Override
     public XeMay[] timKiemAll() {

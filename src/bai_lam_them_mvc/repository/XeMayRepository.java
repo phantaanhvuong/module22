@@ -3,7 +3,7 @@ package bai_lam_them_mvc.repository;
 import bai_lam_them_mvc.entity.XeMay;
 
 public class XeMayRepository implements IXeMayRepository,IPhuongTienRepository{
-    private static XeMay[] xeMays = new XeMay[2];
+    private static XeMay[] xeMays = new XeMay[10];
     static {
         xeMays[0] = new XeMay("425343A","honda", 1890, "hoang", 300.0);
         xeMays[1] = new XeMay("424669A","yamaha", 1979, "huy", 500.0);

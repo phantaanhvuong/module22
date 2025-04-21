@@ -1,4 +1,4 @@
-package ss10.bai_tap.cai_dat_arraylist;
+package ss10_dsa_danh_sach.bai_tap.cai_dat_arraylist;
 
 public class TestArraylist {
     public static class Student1{

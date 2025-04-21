@@ -71,7 +71,6 @@ public class MenuCon {
                 case 2:
                     Oto oto = OtoView.themMoiOto();
                     otoService.themMoi(oto);
-
                     break;
                 case 3:
                     XeMay xeMay = XeMayView.themMoiXeMay();
