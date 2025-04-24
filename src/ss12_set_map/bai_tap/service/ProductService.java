@@ -4,10 +4,13 @@ import mvc_arraylist.repository.OtoRepository;
 import ss12_set_map.bai_tap.entity.Product;
 import ss12_set_map.bai_tap.repository.IProductRepository;
 import ss12_set_map.bai_tap.repository.ProductRepository;
+import ss12_set_map.bai_tap.util.ReadAndWriteFile;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProductService implements IProductService{
+
     private IProductRepository productRepository = new ProductRepository();
 
     @Override
@@ -20,9 +23,10 @@ public class ProductService implements IProductService{
         productRepository.add(product);
     }
 
+
     @Override
-    public void deleteProduct(Product product) {
-        productRepository.deleteProduct(product);
+    public boolean deleteById(int id) {
+        return productRepository.deleteById(id);
     }
 
     @Override

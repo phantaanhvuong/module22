@@ -57,4 +57,7 @@ public class PhuongTien {
                 ", chuSoHuu='" + chuSoHuu + '\'' +
                 '}';
     }
+    public String GetInForToFile4(){
+        return this.getBienKiemSoat()+","+this.getTenHangSanXuat()+","+this.getNamSanXuat()+","+this.getChuSoHuu();
+    }
 }

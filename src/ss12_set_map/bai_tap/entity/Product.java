@@ -1,5 +1,7 @@
 package ss12_set_map.bai_tap.entity;
 
+import java.util.Objects;
+
 public class Product {
     private int id;
     private String nameProduct;
@@ -46,4 +48,19 @@ public class Product {
                 ", price=" + price +
                 '}';
     }
+    public String getInforToFile(){
+        return this.id + "," +this.nameProduct + "," + this.price;
+    }
+
+//    @Override
+//    public boolean equals(Object o) {
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Product product = (Product) o;
+//        return id == product.id && price == product.price && Objects.equals(nameProduct, product.nameProduct);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id, nameProduct, price);
+//    }
 }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public interface IXetaiRepository {
 
-    void xoaPhuongTien(XeTai xeTai);
+    void xoaPhuongTien(XeTai phuongTien);
 
     ArrayList<XeTai> timKiemAll();
 

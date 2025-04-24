@@ -26,4 +26,7 @@ public class XeMay extends PhuongTien {
                 "congSuat=" + congSuat +
                 '}';
     }
+    public String getInForToFile2(){
+        return this.getBienKiemSoat()+","+this.getTenHangSanXuat()+","+this.getNamSanXuat()+","+this.getChuSoHuu()+","+this.congSuat;
+    }
 }

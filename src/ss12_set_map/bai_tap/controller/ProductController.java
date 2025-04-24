@@ -44,14 +44,21 @@ public class ProductController {
 
                 case 3:
                     System.out.println("nhập id cần xóa");
-                    int id = Integer.parseInt(scanner.nextLine());
-                    Product product1 = productService.searchId(id);
-                    if (product1 != null) {
-                        productService.deleteProduct(product1);
-                        System.out.println("Xóa thành công");
-                    } else {
-                        System.out.println("id không tồn tại");
+                    int deleteId = Integer.parseInt(scanner.nextLine());
+                    boolean check = productService.deleteById(deleteId);
+                    if (check){
+                        System.out.println("xoa thanh cong");
+                    }else {
+                        System.out.println("khong tim thay id");
                     }
+//                    Product product1 = productService.searchId(deleteId);
+
+//                    if (product1 != null) {
+//                        productService.deleteProduct(product1);
+//                        System.out.println("Xóa thành công");
+//                    } else {
+//                        System.out.println("id không tồn tại");
+//                    }
                     break;
                 case 4:
                     Product product2 = productService.searchId(ProductView.searchId());

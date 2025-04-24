@@ -27,4 +27,7 @@ public class XeTai extends PhuongTien {
                 "trongTai=" + trongTai +
                 '}';
     }
+    public String getInForToFile3(){
+        return this.getBienKiemSoat()+","+this.getTenHangSanXuat()+","+this.getNamSanXuat()+","+this.getChuSoHuu()+","+this.trongTai;
+    }
 }

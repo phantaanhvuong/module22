@@ -9,7 +9,7 @@ public interface IProductRepository {
 
     void add(Product product);
     Product searchId(int id);
-    void deleteProduct(Product product);
+    boolean deleteById(int id);
     void updateProduct(Product product);
 
     ArrayList<Product> findNameProduct(String name);

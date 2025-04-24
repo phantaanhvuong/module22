@@ -38,4 +38,7 @@ public class Oto extends PhuongTien {
                 super.toString()+
                 '}';
     }
+    public String getInForToFile1(){
+        return this.getBienKiemSoat()+","+this.getTenHangSanXuat()+","+this.getNamSanXuat()+","+this.getChuSoHuu()+","+this.kieuXe+"," +this.soChoNgoi;
+    }
 }
