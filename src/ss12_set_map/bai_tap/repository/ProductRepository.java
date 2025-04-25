@@ -10,31 +10,37 @@ import java.util.Scanner;
 
 public class ProductRepository implements IProductRepository {
     private final String PRODUCT_FILE = "src/ss12_set_map/bai_tap/data/product.csv";
+    private final String PRODUCT_DAT_FILE = "src/ss12_set_map/bai_tap/data/product.dat";
     private final boolean APPEND = true;
     private final boolean NOT_APPEND = false;
     //public static ArrayList<Product> products = new ArrayList<>();
 
 
     @Override
-    public ArrayList<Product> findAll() {
-        ArrayList<Product> productList = new ArrayList<>();
-        List<String> stringList = ReadAndWriteFile.readFile(PRODUCT_FILE);
-        String[] array;
-        for (int i = 0; i < stringList.size(); i++) {
-            array = stringList.get(i).split(",");
-            Product product = new Product(Integer.parseInt(array[0].trim()), array[1].trim(), Long.parseLong(array[2].trim()));
-            productList.add(product);
-        }
-//
+    public List<Product> findAll() {
+        List<Product> productList = new ArrayList<>();
+//        List<String> stringList = ReadAndWriteFile.readFile(PRODUCT_FILE);
+//        String[] array;
+//        for (int i = 0; i < stringList.size(); i++) {
+//            array = stringList.get(i).split(",");
+//            Product product = new Product(Integer.parseInt(array[0].trim()), array[1].trim(), Long.parseLong(array[2].trim()));
+//            productList.add(product);
+//        }
+////
+//        return productList;
+        productList = ReadAndWriteFile.readBinaryFileTolistProduct(PRODUCT_DAT_FILE);
         return productList;
     }
 
     @Override
     public void add(Product product) {
 //        products.add(product);
-        List<String> stringList = new ArrayList<>();
-        stringList.add(product.getInforToFile());
-        ReadAndWriteFile.writeFile(PRODUCT_FILE, stringList, APPEND);
+//        List<String> stringList = new ArrayList<>();
+//        stringList.add(product.getInforToFile());
+//        ReadAndWriteFile.writeFile(PRODUCT_FILE, stringList, APPEND);
+        List<Product> productList = ReadAndWriteFile.readBinaryFileTolistProduct(PRODUCT_DAT_FILE);
+        productList.add(product);
+        ReadAndWriteFile.writeListProductToBinaryFile(PRODUCT_DAT_FILE,productList);
     }
 
     @Override
@@ -61,11 +67,12 @@ public class ProductRepository implements IProductRepository {
             }
         }
         if (check) {
-            List<String> stringList = new ArrayList<>();
-            for (Product p : productList) {
-                stringList.add(p.getInforToFile());
-            }
-            ReadAndWriteFile.writeFile(PRODUCT_FILE, stringList, NOT_APPEND);
+//            List<String> stringList = new ArrayList<>();
+//            for (Product p : productList) {
+//                stringList.add(p.getInforToFile());
+//            }
+//            ReadAndWriteFile.writeFile(PRODUCT_FILE, stringList, NOT_APPEND);
+            ReadAndWriteFile.writeListProductToBinaryFile(PRODUCT_DAT_FILE,productList);
         }
 
         return check;
@@ -80,11 +87,12 @@ public class ProductRepository implements IProductRepository {
                 break;
             }
         }
-        List<String> stringList = new ArrayList<>();
-        for (Product p : productList) {
-            stringList.add(p.getInforToFile());
-        }
-        ReadAndWriteFile.writeFile(PRODUCT_FILE, stringList, NOT_APPEND);
+//        List<String> stringList = new ArrayList<>();
+//        for (Product p : productList) {
+//            stringList.add(p.getInforToFile());
+//        }
+//        ReadAndWriteFile.writeFile(PRODUCT_FILE, stringList, NOT_APPEND);
+        ReadAndWriteFile.writeListProductToBinaryFile(PRODUCT_DAT_FILE,productList);
     }
 
 

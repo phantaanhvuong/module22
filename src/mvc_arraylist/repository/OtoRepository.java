@@ -1,14 +1,15 @@
 package mvc_arraylist.repository;
 
 import mvc_arraylist.entity.Oto;
+import mvc_arraylist.util.ReadAndWriteFile;
 import ss12_set_map.bai_tap.entity.Product;
-import ss12_set_map.bai_tap.util.ReadAndWriteFile;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class OtoRepository implements IOtoRepository{
-    private final String PHUONGTIEN_FILE ="src/mvc_arraylist/data/phuongtien.csv";
+    private final String OTO_FILE ="src/mvc_arraylist/data/oto.csv";
     private final boolean APPEND = true;
     private final boolean NO_APPEND = false;
 //    private static ArrayList<Oto> otos = new ArrayList<>();
@@ -20,16 +21,16 @@ public class OtoRepository implements IOtoRepository{
 
 
     @Override
-    public ArrayList<Oto> timKiemAll() {
+    public List<Oto> timKiemAll() {
 //        return otos;
-        ArrayList<Oto> otos1 = new ArrayList<>();
-        List<String> stringList = ReadAndWriteFile.readFile(PHUONGTIEN_FILE);
+        List<Oto> otos1 = new ArrayList<>();
+        List<String> stringList = ReadAndWriteFile.readFile(OTO_FILE);
         String[] array;
         for (int i = 0; i < stringList.size(); i++) {
             array = stringList.get(i).split(",");
-            Oto  oto = new Oto(array[0].trim(),array[1].trim(),
-                    Integer.parseInt(array[2].trim()),array[3].trim(),
-                    Integer.parseInt(array[4].trim()), array[5].trim());
+            Oto oto = new Oto(array[0],array[1],
+                    Integer.parseInt(array[2]),array[3],
+                    array[4], Integer.parseInt(array[5]));
             otos1.add(oto);
         }
 //
@@ -41,7 +42,7 @@ public class OtoRepository implements IOtoRepository{
 //            otos.add(oto);
         List<String> stringList = new ArrayList<>();
         stringList.add(oto.getInForToFile1());
-        ReadAndWriteFile.writeFile(PHUONGTIEN_FILE,stringList,APPEND);
+        ReadAndWriteFile.writeFile(OTO_FILE,stringList,APPEND);
 
     }
 
@@ -75,7 +76,7 @@ public class OtoRepository implements IOtoRepository{
         for (Oto oto : otoList){
             stringList.add(oto.getInForToFile1());
         }
-        ReadAndWriteFile.writeFile(PHUONGTIEN_FILE,stringList,NO_APPEND);
+        ReadAndWriteFile.writeFile(OTO_FILE,stringList,NO_APPEND);
 
     }
 

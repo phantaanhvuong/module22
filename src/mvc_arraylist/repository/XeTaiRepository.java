@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class XeTaiRepository implements IXetaiRepository {
-    private final String PHUONGTIEN_FILE = "src/mvc_arraylist/data/phuongtien.csv";
+    private final String XETAI_FILE = "src/mvc_arraylist/data/xetai.csv";
     private final boolean APPEND = true;
     private final boolean NO_APPEND = false;
     private static ArrayList<XeTai> xeTais = new ArrayList<>();
@@ -30,13 +30,13 @@ public class XeTaiRepository implements IXetaiRepository {
         for (XeTai xeTai : xeTais1) {
             stringList.add(xeTai.getInForToFile3());
         }
-        ReadAndWriteFile.writeFile(PHUONGTIEN_FILE, stringList, NO_APPEND);
+        ReadAndWriteFile.writeFile(XETAI_FILE, stringList, NO_APPEND);
     }
 
     @Override
     public ArrayList<XeTai> timKiemAll() {
         ArrayList<XeTai> xeTais1 = new ArrayList<>();
-        List<String> stringList = ReadAndWriteFile.readFile(PHUONGTIEN_FILE);
+        List<String> stringList = ReadAndWriteFile.readFile(XETAI_FILE);
         String[] array;
         for (int i = 0; i < stringList.size(); i++) {
             array = stringList.get(i).split(",");
@@ -53,6 +53,6 @@ public class XeTaiRepository implements IXetaiRepository {
     public void themMoi(XeTai xeTai) {
         List<String> stringList = new ArrayList<>();
         stringList.add(xeTai.getInForToFile3());
-        ReadAndWriteFile.writeFile(PHUONGTIEN_FILE, stringList, APPEND);
+        ReadAndWriteFile.writeFile(XETAI_FILE, stringList, APPEND);
     }
 }

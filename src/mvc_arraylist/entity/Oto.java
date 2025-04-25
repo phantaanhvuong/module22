@@ -7,7 +7,7 @@ public class Oto extends PhuongTien {
     public Oto() {
     }
 
-    public Oto(String bienKiemSoat, String tenHangSanXuat, int namSanXuat, String chuSoHuu, int soChoNgoi, String kieuXe) {
+    public Oto(String bienKiemSoat, String tenHangSanXuat, int namSanXuat, String chuSoHuu, String kieuXe,int soChoNgoi) {
         super(bienKiemSoat, tenHangSanXuat, namSanXuat, chuSoHuu);
         this.soChoNgoi = soChoNgoi;
         this.kieuXe = kieuXe;
@@ -39,6 +39,6 @@ public class Oto extends PhuongTien {
                 '}';
     }
     public String getInForToFile1(){
-        return this.getBienKiemSoat()+","+this.getTenHangSanXuat()+","+this.getNamSanXuat()+","+this.getChuSoHuu()+","+this.kieuXe+"," +this.soChoNgoi;
+        return super.GetInForToFile4()+","+this.kieuXe+"," +this.soChoNgoi;
     }
 }

@@ -11,6 +11,7 @@ import mvc_arraylist.view.XeMayView;
 import mvc_arraylist.view.XeTaiView;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class MenuCon {
@@ -35,7 +36,7 @@ public class MenuCon {
                     XeTaiView.displayXeTai(xeTais);
                     break;
                 case 2:
-                    ArrayList<Oto> otos = otoService.timKiemAll();
+                    List<Oto> otos = otoService.timKiemAll();
                     OtoView.displayOto(otos);
                     break;
                 case 3:

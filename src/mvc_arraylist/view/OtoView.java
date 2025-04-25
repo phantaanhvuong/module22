@@ -3,12 +3,13 @@ package mvc_arraylist.view;
 import mvc_arraylist.entity.Oto;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class OtoView {
 
     private static final Scanner scanner = new Scanner(System.in);
-    public static  void  displayOto(ArrayList<Oto> otos){
+    public static  void  displayOto(List<Oto> otos){
         for (int i = 0; i < otos.size(); i++) {
             System.out.println(otos.get(i));
         }
@@ -26,6 +27,6 @@ public class OtoView {
         int soChoNgoi = Integer.parseInt(scanner.nextLine());
         System.out.println("nhập kiểu xe");
         String kieuXe = scanner.nextLine();
-        return new Oto(bienKiemSoat,hangSx,namSx,chuSoHuu,soChoNgoi,kieuXe);
+        return new Oto(bienKiemSoat,hangSx,namSx,chuSoHuu,kieuXe,soChoNgoi);
     }
 }

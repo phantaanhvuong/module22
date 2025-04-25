@@ -7,7 +7,7 @@ import java.util.List;
 public class ReadAndWriteFile {
     public static void writeFile(String pathFile, List<String> stringList, boolean append) {
         File file = new File(pathFile);
-        try (FileWriter fileWriter = new FileWriter(file, append);
+        try (FileWriter fileWriter = new FileWriter(file,append);
              BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
             for (String line : stringList) {
                 bufferedWriter.write(line);

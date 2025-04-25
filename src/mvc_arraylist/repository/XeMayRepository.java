@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class XeMayRepository implements IXeMayRepository {
-    private final String PHUONGTIEN_FILE = "src/mvc_arraylist/data/phuongtien.csv";
+    private final String XEMAY_FILE = "src/mvc_arraylist/data/xemay.csv";
     private final boolean APPEND = true;
     private final boolean NO_APPEND = false;
 
@@ -17,7 +17,7 @@ public class XeMayRepository implements IXeMayRepository {
     public ArrayList<XeMay> timKiemAll() {
 //        return xeMays;
         ArrayList<XeMay> xeMays1 = new ArrayList<>();
-        List<String> stringList = ReadAndWriteFile.readFile(PHUONGTIEN_FILE);
+        List<String> stringList = ReadAndWriteFile.readFile(XEMAY_FILE);
         String[] array;
         for (int i = 0; i < stringList.size(); i++) {
             array = stringList.get(i).split(",");
@@ -34,7 +34,7 @@ public class XeMayRepository implements IXeMayRepository {
     public void themMoi(XeMay xeMay) {
         List<String> stringList = new ArrayList<>();
         stringList.add(xeMay.getInForToFile2());
-        ReadAndWriteFile.writeFile(PHUONGTIEN_FILE, stringList, APPEND);
+        ReadAndWriteFile.writeFile(XEMAY_FILE, stringList, APPEND);
     }
 
     @Override
@@ -45,6 +45,6 @@ public class XeMayRepository implements IXeMayRepository {
         for (XeMay xeMay : xeMayList) {
             stringList.add(xeMay.getInForToFile2());
         }
-        ReadAndWriteFile.writeFile(PHUONGTIEN_FILE, stringList, NO_APPEND);
+        ReadAndWriteFile.writeFile(XEMAY_FILE, stringList, NO_APPEND);
     }
 }

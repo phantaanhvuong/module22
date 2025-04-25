@@ -1,5 +1,7 @@
 package mvc_arraylist.entity;
 
+import java.util.Objects;
+
 public class PhuongTien {
     private String bienKiemSoat;
     private String tenHangSanXuat;
@@ -59,5 +61,17 @@ public class PhuongTien {
     }
     public String GetInForToFile4(){
         return this.getBienKiemSoat()+","+this.getTenHangSanXuat()+","+this.getNamSanXuat()+","+this.getChuSoHuu();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        PhuongTien that = (PhuongTien) o;
+        return namSanXuat == that.namSanXuat && Objects.equals(bienKiemSoat, that.bienKiemSoat) && Objects.equals(tenHangSanXuat, that.tenHangSanXuat) && Objects.equals(chuSoHuu, that.chuSoHuu);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(bienKiemSoat, tenHangSanXuat, namSanXuat, chuSoHuu);
     }
 }

@@ -7,6 +7,7 @@ import ss12_set_map.bai_tap.service.ProductService;
 import ss12_set_map.bai_tap.view.ProductView;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ProductController {
@@ -33,7 +34,7 @@ public class ProductController {
             int choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
                 case 1:
-                    ArrayList<Product> products = productService.findAll();
+                    List<Product> products = productService.findAll();
                     ProductView.disPlay(products);
                     break;
                 case 2:
@@ -61,11 +62,12 @@ public class ProductController {
 //                    }
                     break;
                 case 4:
-                    Product product2 = productService.searchId(ProductView.searchId());
-                    if (product2 == null) {
+                    Product productEdit = productService.searchId(ProductView.searchId());
+                    if (productEdit == null) {
                         System.out.println("Không có");
                     } else {
-                        productService.update(ProductView.updateProduct(product2));
+                        ProductView.updateProduct(productEdit);
+                        productService.update(productEdit);
                     }
                     break;
                 case 5:
@@ -91,12 +93,12 @@ public class ProductController {
             );
             choice = Integer.parseInt(scanner.nextLine());
             if (choice == 1) {
-                ArrayList<Product> products = productService.findAll();
+                List<Product> products = productService.findAll();
                 products.sort(new SortAscending());
                 ProductView.disPlay(productService.findAll());
             }
             if (choice == 2) {
-                ArrayList<Product> products = productService.findAll();
+                List<Product> products = productService.findAll();
                 products.sort(new SortDescending());
                 ProductView.disPlay(productService.findAll());
             } else {

@@ -1,8 +1,9 @@
 package ss12_set_map.bai_tap.entity;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Product {
+public class Product implements Serializable {
     private int id;
     private String nameProduct;
     private long price;
@@ -51,7 +52,7 @@ public class Product {
     public String getInforToFile(){
         return this.id + "," +this.nameProduct + "," + this.price;
     }
-
+//
 //    @Override
 //    public boolean equals(Object o) {
 //        if (o == null || getClass() != o.getClass()) return false;

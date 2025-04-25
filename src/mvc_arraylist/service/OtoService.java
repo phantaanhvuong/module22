@@ -5,13 +5,14 @@ import mvc_arraylist.repository.IOtoRepository;
 import mvc_arraylist.repository.OtoRepository;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class OtoService implements IOtoService {
     private final IOtoRepository otoRepository = new OtoRepository();
 
 
     @Override
-    public ArrayList<Oto> timKiemAll() {
+    public List<Oto> timKiemAll() {
         return otoRepository.timKiemAll();
     }
 

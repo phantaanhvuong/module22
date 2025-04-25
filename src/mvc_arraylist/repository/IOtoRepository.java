@@ -3,9 +3,10 @@ package mvc_arraylist.repository;
 import mvc_arraylist.entity.Oto;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface IOtoRepository {
-    ArrayList<Oto> timKiemAll();
+    List<Oto> timKiemAll();
     void themMoi(Oto oto);
 //    boolean xoaPhuongTien(String bienKiemSoat);
 

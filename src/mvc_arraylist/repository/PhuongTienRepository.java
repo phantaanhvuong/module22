@@ -6,6 +6,7 @@ import mvc_arraylist.entity.XeMay;
 import mvc_arraylist.entity.XeTai;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PhuongTienRepository implements IPhuongTienRepository {
     private static ArrayList<PhuongTien> phuongTiens = new ArrayList<>();
@@ -26,7 +27,7 @@ public class PhuongTienRepository implements IPhuongTienRepository {
     }
 
     @Override
-    public ArrayList<PhuongTien> timKiemAll() {
+    public List<PhuongTien> timKiemAll() {
         phuongTiens.addAll(otoRepository.timKiemAll());
         phuongTiens.addAll(xeMayRepository.timKiemAll());
         phuongTiens.addAll(xetaiRepository.timKiemAll());
@@ -35,7 +36,7 @@ public class PhuongTienRepository implements IPhuongTienRepository {
 
     @Override
     public PhuongTien timBienKiemSoat(String bienKiemSoat) {
-        ArrayList<PhuongTien> phuongTiens1 = timKiemAll();
+        List<PhuongTien> phuongTiens1 = timKiemAll();
         for (int i = 0; i < phuongTiens1.size(); i++) {
             if (phuongTiens1.get(i).getBienKiemSoat().equalsIgnoreCase(bienKiemSoat)) {
                 return phuongTiens1.get(i);

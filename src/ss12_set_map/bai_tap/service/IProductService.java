@@ -12,6 +12,6 @@ public interface IProductService {
     Product searchId(int id);
     void update(Product product);
 
-    ArrayList<Product> findNameProduct(String name);
+    List<Product> findNameProduct(String name);
 //    boolean deleteById (int id);
 }

@@ -3,12 +3,13 @@ package ss12_set_map.bai_tap.view;
 import ss12_set_map.bai_tap.entity.Product;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ProductView {
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static void disPlay(ArrayList<Product> products) {
+    public static void disPlay(List<Product> products) {
         for (int i = 0; i < products.size(); i++) {
             System.out.println(products.get(i));
         }
@@ -18,7 +19,6 @@ public class ProductView {
 
         while (true) {
             try {
-
                 System.out.println("nhập id sản phẩm");
                 int id = Integer.parseInt(scanner.nextLine());
                 System.out.println("nhập tên sản phẩm");
@@ -38,16 +38,14 @@ public class ProductView {
     }
 
 
-    public static Product updateProduct(Product product) {
+    public static void updateProduct(Product product) {
         while (true) {
             try {
-                System.out.println("nhập id sản phẩm");
-                product.setId(Integer.parseInt(scanner.nextLine()));
                 System.out.println("nhập tên sản phẩm");
                 product.setNameProduct(scanner.nextLine());
                 System.out.println("nhập giá sản phẩm");
                 product.setPrice(Long.parseLong(scanner.nextLine()));
-                return product;
+                break;
 
             } catch (NumberFormatException e) {
                 System.err.println("vui lòng nhập số");

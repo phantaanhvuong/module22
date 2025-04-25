@@ -3,8 +3,9 @@ package mvc_arraylist.service;
 import mvc_arraylist.entity.Oto;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface IOtoService {
-    ArrayList<Oto> timKiemAll();
+    List<Oto> timKiemAll();
     void themMoi(Oto oto);
 }

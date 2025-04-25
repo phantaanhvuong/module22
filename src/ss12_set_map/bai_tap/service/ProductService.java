@@ -1,10 +1,8 @@
 package ss12_set_map.bai_tap.service;
 
-import mvc_arraylist.repository.OtoRepository;
 import ss12_set_map.bai_tap.entity.Product;
 import ss12_set_map.bai_tap.repository.IProductRepository;
 import ss12_set_map.bai_tap.repository.ProductRepository;
-import ss12_set_map.bai_tap.util.ReadAndWriteFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +12,7 @@ public class ProductService implements IProductService{
     private IProductRepository productRepository = new ProductRepository();
 
     @Override
-    public ArrayList<Product> findAll() {
+    public List<Product> findAll() {
         return productRepository.findAll();
     }
 
