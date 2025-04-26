@@ -7,4 +7,7 @@ import java.util.List;
 public interface IStrudentService {
     List<Student> findAll();
     void add(Student student);
+    boolean deleteById(int id);
+    void updateById (Student student);
+    Student findId(int id);
 }

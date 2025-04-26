@@ -21,10 +21,30 @@ public class StudentView {
                 String name = scanner.nextLine();
                 System.out.println("nhập tuổi học sinh");
                 int age = Integer.parseInt(scanner.nextLine());
+                System.out.println("them thanh cong");
                 return new Student(id,name,age);
             }catch (NumberFormatException e){
                 System.out.println("vui lòng nhập số");
             }
         }
     }
+    public static int searchId(){
+        System.out.println("nhap id can sua");
+        return Integer.parseInt(scanner.nextLine());
+    }
+    public static void updateStudent(Student student){
+        while (true){
+            try {
+                System.out.println("nhap ten hoc sinh");
+                student.setName(scanner.nextLine());
+                System.out.println("nhap tuoi hoc sinh");
+                student.setAge(Integer.parseInt(scanner.nextLine()));
+                System.out.println("sua thanh cong");
+                break;
+            }catch (NumberFormatException e){
+                System.out.println("vui long nhap so");
+            }
+        }
+    }
+
 }

@@ -34,8 +34,26 @@ public class StudentController {
                     studentService.add(StudentView.addStudent());
                     break;
                 case 3:
+                    System.out.println("nhap id can xoa");
+                    int deleteId = Integer.parseInt(scanner.nextLine());
+                    boolean check = studentService.deleteById(deleteId);
+                    if (check){
+                        System.out.println("xoa thanh cong");
+                    }else {
+                        System.out.println("khong tim thay id");
+                    }
+                    break;
                 case 4:
-                case 5:
+                    Student studentEdit = studentService.findId(StudentView.searchId());
+                    if (studentEdit == null){
+                        System.out.println("khong co id");
+                    }else {
+                        StudentView.updateStudent(studentEdit);
+                        studentService.updateById(studentEdit);
+                        break;
+                    }
+                default:
+                    flag = false;
             }
         }while (flag);
     }

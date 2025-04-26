@@ -22,4 +22,45 @@ public class StudentRepsitory implements IStudentRepository {
         studentList.add(student);
         WriteReadFile.wirteBinaryFile(STUDENT_DAT_FILE,studentList);
     }
+
+    @Override
+    public boolean deleteById(int id) {
+        List<Student> studentList = findAll();
+        boolean check = false;
+        for (int i = 0; i < studentList.size(); i++) {
+            if (id == studentList.get(i).getId()){
+                check = true;
+                studentList.remove(i);
+                break;
+            }
+        }
+        if (check){
+            WriteReadFile.wirteBinaryFile(STUDENT_DAT_FILE,studentList);
+        }
+        return check;
+
+    }
+
+    @Override
+    public void updateByid(Student student) {
+        List<Student> studentList = findAll();
+        for (int i = 0; i < studentList.size(); i++) {
+            if (studentList.get(i).getId() == student.getId()){
+                studentList.set(i,student);
+            }
+            break;
+        }
+        WriteReadFile.wirteBinaryFile(STUDENT_DAT_FILE,studentList);
+    }
+
+    @Override
+    public Student findId(int id) {
+        List<Student> studentList = findAll();
+        for (int i = 0; i < studentList.size(); i++) {
+            if (studentList.get(i).getId() == id){
+                return studentList.get(i);
+            }
+        }
+        return null;
+    }
 }

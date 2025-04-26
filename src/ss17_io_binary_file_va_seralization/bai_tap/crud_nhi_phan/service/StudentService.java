@@ -18,4 +18,19 @@ public class StudentService implements IStrudentService{
     public void add(Student student) {
         studentRepository.add(student);
     }
+
+    @Override
+    public boolean deleteById(int id) {
+        return studentRepository.deleteById(id);
+    }
+
+    @Override
+    public void updateById(Student student) {
+        studentRepository.updateByid(student);
+    }
+
+    @Override
+    public Student findId(int id) {
+        return studentRepository.findId(id);
+    }
 }
