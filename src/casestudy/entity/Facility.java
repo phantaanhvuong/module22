@@ -1,6 +1,6 @@
 package casestudy.entity;
 
-public abstract class Furama {
+public abstract class Facility {
     private int maDichVu;
     private String tenDichVu;
     private int dienTichSuDung;
@@ -8,10 +8,10 @@ public abstract class Furama {
     private int soLuongNguoi;
     private String kieuThue;
 
-    public Furama() {
+    public Facility() {
     }
 
-    public Furama(int maDichVu, String tenDichVu, int dienTichSuDung, int chiPhiThue, int soLuongNguoi, String kieuThue) {
+    public Facility(int maDichVu, String tenDichVu, int dienTichSuDung, int chiPhiThue, int soLuongNguoi, String kieuThue) {
         this.maDichVu = maDichVu;
         this.tenDichVu = tenDichVu;
         this.dienTichSuDung = dienTichSuDung;

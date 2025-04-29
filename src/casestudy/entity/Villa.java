@@ -1,6 +1,6 @@
 package casestudy.entity;
 
-public class Villa extends Furama{
+public class Villa extends Facility {
     private String tieuChuan;
     private int dienTichHoBoi;
     private int soTang;

@@ -1,15 +1,15 @@
 package casestudy.entity;
 
-public class HopDong {
+public class Contract {
     private int soHopDong;
     private int maBooking;
     private int soTienCocTruoc;
     private int soTienThanhToan;
 
-    public HopDong() {
+    public Contract() {
     }
 
-    public HopDong(int soHopDong, int maBooking, int soTienCocTruoc, int soTienThanhToan) {
+    public Contract(int soHopDong, int maBooking, int soTienCocTruoc, int soTienThanhToan) {
         this.soHopDong = soHopDong;
         this.maBooking = maBooking;
         this.soTienCocTruoc = soTienCocTruoc;
