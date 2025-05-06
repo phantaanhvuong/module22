@@ -1,34 +1,34 @@
 package casestudy.entity;
 
 public class Person {
-    private int ma;
+    private String ma;
     private String hoTen;
-    private int ngaySinh;
+    private String ngaySinh;
     private String gioiTinh;
-    private int soCMND;
-    private int sodienThoai;
+    private String soCMND;
+    private String soDienThoai;
     private String email;
 
 
     public Person() {
     }
 
-    public Person(int maNhanVien, String hoTen, int ngaySinh, String gioiTinh, int soCMND, int sodienThoai, String email) {
+    public Person(String maNhanVien, String hoTen, String ngaySinh, String gioiTinh, String soCMND, String sodienThoai, String email) {
         this.ma = maNhanVien;
         this.hoTen = hoTen;
         this.ngaySinh = ngaySinh;
         this.gioiTinh = gioiTinh;
         this.soCMND = soCMND;
-        this.sodienThoai = sodienThoai;
+        this.soDienThoai = sodienThoai;
         this.email = email;
 
     }
 
-    public int getMaNhanVien() {
+    public String getMa() {
         return ma;
     }
 
-    public void setMaNhanVien(int maNhanVien) {
+    public void setMa(String maNhanVien) {
         this.ma = maNhanVien;
     }
 
@@ -40,11 +40,11 @@ public class Person {
         this.hoTen = hoTen;
     }
 
-    public int getNgaySinh() {
+    public String getNgaySinh() {
         return ngaySinh;
     }
 
-    public void setNgaySinh(int ngaySinh) {
+    public void setNgaySinh(String ngaySinh) {
         this.ngaySinh = ngaySinh;
     }
 
@@ -56,20 +56,20 @@ public class Person {
         this.gioiTinh = gioiTinh;
     }
 
-    public int getSoCMND() {
+    public String getSoCMND() {
         return soCMND;
     }
 
-    public void setSoCMND(int soCMND) {
+    public void setSoCMND(String soCMND) {
         this.soCMND = soCMND;
     }
 
-    public int getSodienThoai() {
-        return sodienThoai;
+    public String getSoDienThoai() {
+        return soDienThoai;
     }
 
-    public void setSodienThoai(int sodienThoai) {
-        this.sodienThoai = sodienThoai;
+    public void setSoDienThoai(String soDienThoai) {
+        this.soDienThoai = soDienThoai;
     }
 
     public String getEmail() {
@@ -78,5 +78,22 @@ public class Person {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return
+                "ma='" + ma + '\'' +
+                ", hoTen='" + hoTen + '\'' +
+                ", ngaySinh='" + ngaySinh + '\'' +
+                ", gioiTinh='" + gioiTinh + '\'' +
+                ", soCMND='" + soCMND + '\'' +
+                ", soDienThoai='" + soDienThoai + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
+    public String getInForToFilePerson(){
+        return this.ma +"," +this.hoTen + ","+this.ngaySinh+"," +this.gioiTinh+","+this.soCMND+","+this.soDienThoai+","+this.email;
     }
 }

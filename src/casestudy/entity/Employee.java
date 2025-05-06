@@ -1,19 +1,20 @@
 package casestudy.entity;
 
-public class Employee extends Person{
+public class Employee extends Person {
     private String trinhDo;
     private String viTri;
-    private int luong;
+    private long luong;
 
     public Employee() {
     }
 
-    public Employee(int maNhanVien, String hoTen, int ngaySinh, String gioiTinh, int soCMND, int sodienThoai, String email, String trinhDo, String viTri, int luong) {
+    public Employee(String maNhanVien, String hoTen, String ngaySinh, String gioiTinh, String soCMND, String sodienThoai, String email, String trinhDo, String viTri, long luong) {
         super(maNhanVien, hoTen, ngaySinh, gioiTinh, soCMND, sodienThoai, email);
         this.trinhDo = trinhDo;
         this.viTri = viTri;
         this.luong = luong;
     }
+
 
     public String getTrinhDo() {
         return trinhDo;
@@ -31,11 +32,25 @@ public class Employee extends Person{
         this.viTri = viTri;
     }
 
-    public int getLuong() {
+    public long getLuong() {
         return luong;
     }
 
-    public void setLuong(int luong) {
+    public void setLuong(long luong) {
         this.luong = luong;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                super.toString() +
+                "trinhDo='" + trinhDo + '\'' +
+                ", viTri='" + viTri + '\'' +
+                ", luong=" + luong +
+                '}';
+    }
+
+    public String getInForToFileEmployee() {
+        return super.getInForToFilePerson() + "," + this.trinhDo + "," + this.viTri + "," + this.luong;
     }
 }

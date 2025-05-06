@@ -1,6 +1,6 @@
 package casestudy.entity;
 
-public abstract class Customer extends Person {
+public  class Customer extends Person {
 
     private String loaiKhach;
     private String diaChi;
@@ -8,7 +8,7 @@ public abstract class Customer extends Person {
     public Customer() {
     }
 
-    public Customer(int maNhanVien, String hoTen, int ngaySinh, String gioiTinh, int soCMND, int sodienThoai, String email, String loaiKhach, String diaChi) {
+    public Customer(String maNhanVien, String hoTen, String ngaySinh, String gioiTinh, String soCMND, String sodienThoai, String email, String loaiKhach, String diaChi) {
         super(maNhanVien, hoTen, ngaySinh, gioiTinh, soCMND, sodienThoai, email);
         this.loaiKhach = loaiKhach;
         this.diaChi = diaChi;
@@ -28,6 +28,18 @@ public abstract class Customer extends Person {
 
     public void setDiaChi(String diaChi) {
         this.diaChi = diaChi;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                super.toString()+
+                "loaiKhach='" + loaiKhach + '\'' +
+                ", diaChi='" + diaChi + '\'' +
+                '}';
+    }
+    public String getInToFileCustomer(){
+        return super.getInForToFilePerson()+","+this.loaiKhach+","+this.diaChi;
     }
 }
 

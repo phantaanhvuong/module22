@@ -1,8 +1,18 @@
 package casestudy.controller;
 
+import casestudy.entity.Customer;
+import casestudy.entity.Employee;
+import casestudy.service.customer.CustomerService;
+import casestudy.service.employee.EmployeeService;
+import casestudy.view.CustomerView;
+import casestudy.view.EmployeeView;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class FuramaController {
+    private static EmployeeService employeeService = new EmployeeService();
+    private static CustomerService customerService = new CustomerService();
     public static Scanner scanner = new Scanner(System.in);
 
     public static void displayMainMenu() {
@@ -18,27 +28,35 @@ public class FuramaController {
                     "\n 6. Exit"
             );
             System.out.println("chọn chức năng");
-            int choice = Integer.parseInt(scanner.nextLine());
-            switch (choice) {
-                case 1:
-                    menuEmployee();
-                    break;
-                case 2:
-                    menuCustomer();
-                    break;
-                case 3:
-                    menuFacility();
-                    break;
-                case 4:
-                    menuBooking();
-                    break;
-                case 5:
-                    promotionManagement();
-                    break;
-                case 6:
-                    return;
+//            int choice;
+            try {
+               int choice = Integer.parseInt(scanner.nextLine());
+                switch (choice) {
+                    case 1:
+                        menuEmployee();
+                        break;
+                    case 2:
+                        menuCustomer();
+                        break;
+                    case 3:
+                        menuFacility();
+                        break;
+                    case 4:
+                        menuBooking();
+                        break;
+                    case 5:
+                        promotionManagement();
+                        break;
+                    case 6:
+                        return;
 
+                }
+
+            }catch (NumberFormatException e){
+                System.out.println("khong duoc de trong vui long chon so");
             }
+
+
 
         } while (true);
     }
@@ -54,14 +72,34 @@ public class FuramaController {
 
             );
             System.out.println("chọn chức năng");
-            int choice = Integer.parseInt(scanner.nextLine());
-            switch (choice) {
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                    return;
+            try{
+                int choice = Integer.parseInt(scanner.nextLine());
+                switch (choice) {
+                    case 1:
+                        List<Employee> employees = employeeService.findAllEmployee();
+                        EmployeeView.displayEmployee(employees);
+                        break;
+                    case 2:
+                        Employee employee = EmployeeView.addEmployee();
+                        employeeService.addEmployee(employee);
+                        System.out.println("thêm thành công");
+                        break;
+                    case 3:
+                        Employee employeeEdit= employeeService.searchId(EmployeeView.searchId());
+                        if (employeeEdit == null){
+                            System.out.println("mã nhân viên không có trong danh sách");
+                        }else {
+                            EmployeeView.updateEmployee(employeeEdit);
+                            employeeService.updateEmployee(employeeEdit);
+                        }
+                        break;
+                    case 4:
+                        return;
+                }
+            }catch (NumberFormatException e){
+                System.out.println("vui lòng chọn chức năng, không được để trống");
             }
+
         } while (true);
     }
 
@@ -77,8 +115,22 @@ public class FuramaController {
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
+                    List<Customer> customers = customerService.findAllCustomer();
+                    CustomerView.displayCustomer(customers);
+                    break;
                 case 2:
+                    Customer customer = CustomerView.addcustomer();
+                    customerService.addCustomer(customer);
+                    System.out.println("thêm thành công");
+                    break;
                 case 3:
+                    Customer customerEdit = customerService.searchId(CustomerView.SearchId());
+                    if (customerEdit == null){
+                        System.out.println("mã nhân viên không có trong danh sách");
+                    }else {
+                        CustomerView.updateCustomer(customerEdit);
+                       customerService.updateCustomer(customerEdit);
+                    }
                 case 4:
                     return;
             }
@@ -123,6 +175,8 @@ public class FuramaController {
                 case 2:
                 case 3:
                 case 4:
+                case 5:
+                case 6:
                     return;
             }
         } while (true);
@@ -141,7 +195,6 @@ public class FuramaController {
                 case 1:
                 case 2:
                 case 3:
-                case 4:
                     return;
             }
         } while (true);
